@@ -1,28 +1,57 @@
-# Student Profile App — React Native Basics
+<a id="top"></a>
 
-> **Author:** Youssef Lagmouch
-> **Stack:** React Native · Expo · JavaScript
+<div align="center">
+
+# 🎓 Student Profile App
+
+### React Native Basics — Components · Props · Events · Lists · Flexbox
+
+<p>
+  <img src="https://img.shields.io/badge/React%20Native-0.88-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Native" />
+  <img src="https://img.shields.io/badge/Expo-SDK%2058-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo" />
+  <img src="https://img.shields.io/badge/JavaScript-ES2023-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+</p>
+<p>
+  <img src="https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20Web-3DDC84?style=flat-square&logo=android&logoColor=white" alt="Platforms" />
+  <img src="https://img.shields.io/badge/Status-Completed-success?style=flat-square" alt="Status" />
+  <img src="https://img.shields.io/badge/Author-Youssef%20Lagmouch-1E3A5F?style=flat-square&logo=github&logoColor=white" alt="Author" />
+</p>
+
+<table>
+  <tr>
+    <td align="center"><b>📇 My Student Card</b></td>
+    <td align="center"><b>🗂️ Student Space</b></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/exercise1-result.png" width="300" alt="Exercise 1 preview" /></td>
+    <td><img src="screenshots/exercise2-result.png" width="300" alt="Exercise 2 preview" /></td>
+  </tr>
+</table>
+
+</div>
 
 ---
 
-## Table of contents
+## 📑 Table of contents
 
-1. [Objectives](#1-objectives)
-2. [Project structure](#2-project-structure)
-3. [Prerequisites](#3-prerequisites)
-4. [Part 0 — Opening the project](#4-part-0--opening-the-project)
-5. [Part 1 — Handling events](#5-part-1--handling-events)
-6. [Exercise 1 — "My Student Card"](#6-exercise-1--my-student-card)
-7. [Exercise 2 — "Student Space"](#7-exercise-2--student-space)
-8. [Going further (optional)](#8-going-further-optional)
-9. [Common mistakes](#9-common-mistakes)
-10. [Quick command reference](#10-quick-command-reference)
+1. [🎯 Objectives](#-1-objectives)
+2. [📁 Project structure](#-2-project-structure)
+3. [🧰 Prerequisites](#-3-prerequisites)
+4. [🚀 Part 0 — Opening the project](#-4-part-0--opening-the-project)
+5. [⚡ Part 1 — Handling events](#-5-part-1--handling-events)
+6. [📇 Exercise 1 — "My Student Card"](#-6-exercise-1--my-student-card)
+7. [🗂️ Exercise 2 — "Student Space"](#-7-exercise-2--student-space)
+8. [🌟 Going further (optional)](#-8-going-further-optional)
+9. [🐞 Common mistakes](#-9-common-mistakes)
+10. [⌨️ Quick command reference](#-10-quick-command-reference)
 
 ---
 
-## 1. Objectives
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
 
-By the end of this lab you will be able to:
+## 🎯 1. Objectives
+
+By the end of this guide you will be able to:
 
 - Handle user events with `onPress` and `onChangeText`.
 - Build **reusable components** and pass data to them with **props**.
@@ -31,7 +60,9 @@ By the end of this lab you will be able to:
 - Lay out a screen with **Flexbox** and `StyleSheet.create`.
 - Make content scrollable with `ScrollView`.
 
-## 2. Project structure
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
+
+## 📁 2. Project structure
 
 Each exercise is an **independent Expo project** with its own folder and its own `App.js`.
 
@@ -55,7 +86,9 @@ student-profile-app/
     └── assets/
 ```
 
-## 3. Prerequisites
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
+
+## 🧰 3. Prerequisites
 
 | Tool | Check with | Notes |
 | --- | --- | --- |
@@ -66,7 +99,9 @@ student-profile-app/
 
 ---
 
-## 4. Part 0 — Opening the project
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
+
+## 🚀 4. Part 0 — Opening the project
 
 1. Open **Visual Studio Code**.
 2. Go to **File → Open Folder…** and choose the project folder (`exercise1` or `exercise2`).
@@ -88,11 +123,13 @@ npx expo start
 
 ---
 
-## 5. Part 1 — Handling events
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
+
+## ⚡ 5. Part 1 — Handling events
 
 An **event** is an action of the user or an interaction with the interface. React Native provides, among others, `onPress` for presses on a button and `onChangeText` for changes in a text field.
 
-### React to a press
+### 👆 React to a press
 
 ```jsx
 <Button
@@ -103,7 +140,7 @@ An **event** is an action of the user or an interaction with the interface. Reac
 
 The function passed to `onPress` runs when the user presses the button. **You must pass a function**, not call it directly while rendering.
 
-### Read the typed text
+### ⌨️ Read the typed text
 
 ```jsx
 <TextInput
@@ -114,20 +151,23 @@ The function passed to `onPress` runs when the user presses the button. **You mu
 
 On every change of the field, `onChangeText` receives the new text. Here it is sent to the console.
 
-### Work to do
+### 📝 Work to do
 
 Add a **"Greet"** button that shows an alert when pressed, and a `TextInput` that prints the typed characters in the console.
 
-> ⚠️ **Attention:** writing `onPress={alert('Hello')}` runs the instruction **immediately**.
+> [!WARNING]
+> **Attention:** writing `onPress={alert('Hello')}` runs the instruction **immediately**.
 > Use `onPress={() => alert('Hello')}` instead.
 
 ---
 
-## 6. Exercise 1 — "My Student Card"
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
+
+## 📇 6. Exercise 1 — "My Student Card"
 
 Create a mobile app called **"My Student Card"** reusing the notions studied.
 
-### Requirements
+### ✅ Requirements
 
 | # | Requirement | Where in the code |
 | --- | --- | --- |
@@ -141,7 +181,7 @@ Create a mobile app called **"My Student Card"** reusing the notions studied.
 | 8 | Two cards on the same row with **Flexbox** | `flexDirection: 'row'` |
 | 9 | Consistent style: background, title sizes, spacing, alignment | `StyleSheet.create` |
 
-### Step by step
+### 🪜 Step by step
 
 **Step 1 — Imports.** Import React, the `useState` hook and the components used.
 
@@ -197,7 +237,7 @@ const [skill, setSkill] = useState('');
 
 **Step 7 — Styles.** Everything goes in `StyleSheet.create` (see the full file below).
 
-### Full code — `exercise1/App.js`
+### 💻 Full code — `exercise1/App.js`
 
 ```jsx
 import React, { useState } from 'react';
@@ -336,11 +376,13 @@ const styles = StyleSheet.create({
 });
 ```
 
-### Result
+### 📸 Result
 
-![Exercise 1 result](screenshots/exercise1-result.png)
+<p align="center">
+  <img src="screenshots/exercise1-result.png" width="340" alt="Exercise 1 result" />
+</p>
 
-### Test checklist
+### 🧪 Test checklist
 
 - [ ] The title, the image and the three cards are displayed.
 - [ ] "Name" and "Field" are on the **same row**.
@@ -350,11 +392,13 @@ const styles = StyleSheet.create({
 
 ---
 
-## 7. Exercise 2 — "Student Space"
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
+
+## 🗂️ 7. Exercise 2 — "Student Space"
 
 Create an app called **"Student Space"** (you can reuse the code from the previous steps). The goal is to structure the interface with reusable components and to display information and a list of skills **from data**. Test the app after each modification.
 
-### Step 1 — Prepare the data
+### 1️⃣ Step 1 — Prepare the data
 
 In `App.js`, declare a student **object** and an **array** of skills.
 
@@ -370,7 +414,7 @@ const competences = ['JavaScript', 'SQL', 'React Native'];
 
 An **object** fits information describing **one** person. An **array** fits a list of values of the **same type**.
 
-### Step 2 — Create reusable components
+### 2️⃣ Step 2 — Create reusable components
 
 Create an `InfoCard` component receiving two props: `title` and `value`. It displays them in a `View`. Then use three instances to present the name, the field and the level.
 
@@ -387,7 +431,7 @@ function InfoCard({ title, value }) {
 
 *Destructuring* `{ title, value }` retrieves the properties passed to the component, so the same code displays different information depending on the props.
 
-### Step 3 — Display the skills list
+### 3️⃣ Step 3 — Display the skills list
 
 Create a `SkillList` component receiving the `competences` array as a prop. Use `map()` to transform each skill into a `Text`, and add a unique `key` to every generated element.
 
@@ -407,7 +451,7 @@ function SkillList({ competences }) {
 
 `map()` goes through the array and produces one UI element per value. The `key` helps React tell the list items apart when it updates the interface. For a fixed list the `index` is fine; in a real application a stable identifier is preferable.
 
-### Step 4 — Assemble the screen
+### 4️⃣ Step 4 — Assemble the screen
 
 In the `App` component, order the elements like this: a title, the three information cards, a "Skills" sub-title, then the `SkillList` component. Pass the student values to the cards.
 
@@ -442,7 +486,7 @@ const addSkill = () => {
 };
 ```
 
-### Step 5 — Customise the layout
+### 5️⃣ Step 5 — Customise the layout
 
 Complete `StyleSheet.create` with the necessary styles. The result must be readable on a phone screen and visually distinguish the title, the cards and the skills.
 
@@ -460,7 +504,7 @@ const styles = StyleSheet.create({
 
 You may change the colours, margins and sizes.
 
-### Full code — `exercise2/App.js`
+### 💻 Full code — `exercise2/App.js`
 
 ```jsx
 import React, { useState } from 'react';
@@ -594,11 +638,13 @@ const styles = StyleSheet.create({
 });
 ```
 
-### Result
+### 📸 Result
 
-![Exercise 2 result](screenshots/exercise2-result.png)
+<p align="center">
+  <img src="screenshots/exercise2-result.png" width="340" alt="Exercise 2 result" />
+</p>
 
-### Test checklist
+### 🧪 Test checklist
 
 - [ ] Title "Student Space" and the three cards (Name, Field, Level).
 - [ ] The "Skills" sub-title followed by the three skills.
@@ -607,7 +653,9 @@ const styles = StyleSheet.create({
 
 ---
 
-## 8. Going further (optional)
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
+
+## 🌟 8. Going further (optional)
 
 Show a **mastery level** next to each skill ("Beginner", "Intermediate" or "Advanced"):
 
@@ -635,7 +683,9 @@ const competences = [
 
 ---
 
-## 9. Common mistakes
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
+
+## 🐞 9. Common mistakes
 
 | Mistake | Symptom | Fix |
 | --- | --- | --- |
@@ -645,7 +695,9 @@ const competences = [
 | Port already in use | `Port 8081 is being used` | Run `npx expo start --port 8090` |
 | Module not found | Red error screen | Run `npm install` inside the project folder |
 
-## 10. Quick command reference
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
+
+## ⌨️ 10. Quick command reference
 
 ```bash
 cd exercise1                 # enter an exercise folder
@@ -656,5 +708,12 @@ npx expo start --port 8090   # use another port
 ```
 
 ---
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
 
-*Author: Youssef Lagmouch*
+<div align="center">
+
+**Made with ❤️ and ⚛️ React Native by [Youssef Lagmouch](https://github.com/Lagmouchyoussef)**
+
+⭐ If this project helped you, consider giving it a star!
+
+</div>
